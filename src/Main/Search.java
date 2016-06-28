@@ -33,7 +33,7 @@ public class Search {
 			url.put("query", "Barack Obama");
 			url.put("limit", "5");
 			url.put("indent", "true");
-			url.put("key", "AIzaSyBEzuRRhkOQM-jHM1DuRjBSxMQrLfSJCGE");
+			url.put("key", "AIzaSyCectN98JfoNUWE0GLiYCTkQ3r4xVaShHY");
 			
 			HttpRequest request = factoryRequest.buildGetRequest(url);
 			HttpResponse httpResponse = request.execute();
