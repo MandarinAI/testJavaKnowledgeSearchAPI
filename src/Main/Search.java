@@ -31,7 +31,7 @@ public class Search {
 			GenericUrl url = new GenericUrl("https://kgsearch.googleapis.com/v1/entities:search");
 			
 			url.put("query", "Barack Obama");
-			url.put("limit", "5");
+			url.put("limit", "1");
 			url.put("indent", "true");
 			url.put("key", "AIzaSyCectN98JfoNUWE0GLiYCTkQ3r4xVaShHY");
 			
