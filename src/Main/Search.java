@@ -42,6 +42,7 @@ public class Search {
 			
 			for(Object element : elements){
 				System.out.println(JsonPath.read(element, "$.result.name").toString());
+				System.out.println(JsonPath.read(element, "$.result.@type").toString());
 			}
 			
 			
