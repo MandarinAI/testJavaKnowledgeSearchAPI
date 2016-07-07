@@ -20,7 +20,8 @@ import java.util.Properties;
 public class Search {
 	
 	//public static Properties properties = new Properties();
-	public static void main(String[] args){
+	public static void submitQueryMethod(String query){
+		
 		
 		try{
 			//properties.load(new FileInputStream("kgsearch.properties"));
@@ -30,7 +31,7 @@ public class Search {
 			JSONParser parser = new JSONParser();
 			GenericUrl url = new GenericUrl("https://kgsearch.googleapis.com/v1/entities:search");
 			
-			url.put("query", "Barack Obama");
+			url.put("query", query);
 			url.put("limit", "1");
 			url.put("indent", "true");
 			url.put("key", "AIzaSyCectN98JfoNUWE0GLiYCTkQ3r4xVaShHY");
@@ -43,6 +44,7 @@ public class Search {
 			for(Object element : elements){
 				System.out.println(JsonPath.read(element, "$.result.name").toString());
 				System.out.println(JsonPath.read(element, "$.result.@type").toString());
+				System.out.println(JsonPath.read(element, "$.result.description").toString());
 			}
 			
 			
