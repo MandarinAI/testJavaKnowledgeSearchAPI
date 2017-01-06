@@ -22,6 +22,7 @@ public class Search {
 	//public static Properties properties = new Properties();
 	public static void submitQueryMethod(String query){
 		
+		String name = "", type = "", description = "";
 		
 		try{
 			//properties.load(new FileInputStream("kgsearch.properties"));
@@ -42,9 +43,15 @@ public class Search {
 			JSONArray elements = (JSONArray) response.get("itemListElement");
 			
 			for(Object element : elements){
-				System.out.println(JsonPath.read(element, "$.result.name").toString());
-				System.out.println(JsonPath.read(element, "$.result.@type").toString());
-				System.out.println(JsonPath.read(element, "$.result.description").toString());
+				name = (JsonPath.read(element, "$.result.name").toString());
+				type = (JsonPath.read(element, "$.result.@type").toString());
+				description = (JsonPath.read(element, "$.result.description").toString());
+			}
+			
+			if (name.equals("") || type.equals("") || description.equals("")){
+				System.out.println("Object unavailable");
+			} else{
+				System.out.println(name + "\n" + type + "\n" + description);
 			}
 			
 			
