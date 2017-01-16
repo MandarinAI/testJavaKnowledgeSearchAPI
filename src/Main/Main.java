@@ -13,6 +13,7 @@ public class Main {
 		
 		Search.submitQueryMethod(userQuery);
 		
+		scan.close();
 	}
 
 }
